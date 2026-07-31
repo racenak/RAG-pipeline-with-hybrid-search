@@ -1,0 +1,47 @@
+# =============================================================================
+# RAG Pipeline — Structured logging configuration
+# =============================================================================
+
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  json:
+    format: "%(message)s"
+    class: pythonjsonlogger.jsonlogger.JsonFormatter
+    datefmt: "%Y-%m-%dT%H:%M:%S"
+  console:
+    format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: console
+    stream: ext://sys.stdout
+  json:
+    class: logging.StreamHandler
+    formatter: json
+    stream: ext://sys.stdout
+
+loggers:
+  rag_pipeline:
+    level: INFO
+    handlers: [console]
+    propagate: false
+  uvicorn:
+    level: INFO
+    handlers: [console]
+    propagate: false
+  uvicorn.error:
+    level: INFO
+    handlers: [console]
+    propagate: false
+  uvicorn.access:
+    level: WARNING
+    handlers: [console]
+    propagate: false
+
+root:
+  level: WARNING
+  handlers: [console]

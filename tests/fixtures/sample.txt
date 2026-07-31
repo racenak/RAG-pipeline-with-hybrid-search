@@ -1,0 +1,7 @@
+This is a sample text file for testing the RAG pipeline ingestion.
+
+It contains multiple paragraphs to test chunking behavior.
+
+The quick brown fox jumps over the lazy dog. This sentence contains every letter of the alphabet.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

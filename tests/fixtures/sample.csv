@@ -1,0 +1,6 @@
+name,description,category
+FastAPI,Modern Python web framework,web
+Pydantic,Data validation library,core
+pdfplumber,PDF text extraction library,parsing
+Sentence Transformers,Embedding generation library,embeddings
+OpenSearch,Distributed search engine,storage

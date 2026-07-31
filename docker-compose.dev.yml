@@ -1,0 +1,39 @@
+# =============================================================================
+# Podman Compose — Development overrides
+# =============================================================================
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    command: >
+      python -m uvicorn rag_pipeline.api.app:app
+      --reload --host 0.0.0.0 --port 8000
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+    environment:
+      - LOG_LEVEL=DEBUG
+      - OPENSEARCH_HOST=opensearch
+      - POSTGRES_HOST=postgres
+      - REDIS_HOST=redis
+    ports:
+      - "8000:8000"
+      - "5678:5678"  # debugpy
+
+  opensearch:
+    environment:
+      - OPENSEARCH_JAVA_OPTS=-Xms256m -Xmx256m
+
+  prometheus:
+    ports:
+      - "9090:9090"
+
+  grafana:
+    ports:
+      - "3000:3000"
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer

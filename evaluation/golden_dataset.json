@@ -1,0 +1,564 @@
+{
+  "version": "1.0.0",
+  "description": "Golden evaluation dataset for RAG pipeline with hybrid search",
+  "cases": [
+    {
+      "id": "factual-001",
+      "query": "What is the default embedding dimension used by the pipeline?",
+      "expected_answer": "1024",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "embedding_settings"}
+    },
+    {
+      "id": "factual-002",
+      "query": "Which search engine does the pipeline use for vector storage?",
+      "expected_answer": "OpenSearch",
+      "expected_documents": ["opensearch.py", "vector.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "storage_settings"}
+    },
+    {
+      "id": "factual-003",
+      "query": "What is the default chunking strategy used by the pipeline?",
+      "expected_answer": "semantic",
+      "expected_documents": ["config.py", "chunking.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "chunking_settings"}
+    },
+    {
+      "id": "factual-004",
+      "query": "What is the Redis TTL for query cache in seconds?",
+      "expected_answer": "3600",
+      "expected_documents": ["config.py", "redis_cache.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "storage_settings"}
+    },
+    {
+      "id": "factual-005",
+      "query": "What embedding model is used by default?",
+      "expected_answer": "BAAI/bge-large-en-v1.5",
+      "expected_documents": ["config.py", "generator.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "embedding_settings"}
+    },
+    {
+      "id": "factual-006",
+      "query": "What is the default reranking model used in the pipeline?",
+      "expected_answer": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "expected_documents": ["config.py", "reranking.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "factual-007",
+      "query": "What default vector top-k value is configured for retrieval?",
+      "expected_answer": "20",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "factual-008",
+      "query": "What is the default target chunk size in tokens?",
+      "expected_answer": "512",
+      "expected_documents": ["config.py", "chunking.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "chunking_settings"}
+    },
+    {
+      "id": "factual-009",
+      "query": "Which LLM provider is configured by default?",
+      "expected_answer": "openrouter",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "generation_settings"}
+    },
+    {
+      "id": "factual-010",
+      "query": "What is the default BM25 k1 parameter?",
+      "expected_answer": "1.5",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "factual-011",
+      "query": "What RRF k parameter is used for hybrid search fusion?",
+      "expected_answer": "60",
+      "expected_documents": ["config.py", "hybrid.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "factual-012",
+      "query": "What vector similarity threshold is configured by default?",
+      "expected_answer": "0.7",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "factual-013",
+      "query": "What is the default maximum chunk size in tokens?",
+      "expected_answer": "1024",
+      "expected_documents": ["config.py", "chunking.py"],
+      "category": "factual",
+      "difficulty": "medium",
+      "metadata": {"source_section": "chunking_settings"}
+    },
+    {
+      "id": "factual-014",
+      "query": "Which file format does the ingestion pipeline support that stores data as CSV?",
+      "expected_answer": "csv",
+      "expected_documents": ["ingestion.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "ingestion"}
+    },
+    {
+      "id": "factual-015",
+      "query": "What is the default Postgres port configured in the pipeline?",
+      "expected_answer": "5432",
+      "expected_documents": ["config.py", "postgres.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "storage_settings"}
+    },
+    {
+      "id": "factual-016",
+      "query": "What OpenSearch port is configured by default?",
+      "expected_answer": "9200",
+      "expected_documents": ["config.py", "opensearch.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "storage_settings"}
+    },
+    {
+      "id": "factual-017",
+      "query": "What is the default chunk overlap in tokens?",
+      "expected_answer": "50",
+      "expected_documents": ["config.py", "chunking.py"],
+      "category": "factual",
+      "difficulty": "medium",
+      "metadata": {"source_section": "chunking_settings"}
+    },
+    {
+      "id": "factual-018",
+      "query": "Which tokenization encoding is used by the token counter?",
+      "expected_answer": "cl100k_base",
+      "expected_documents": ["chunking.py"],
+      "category": "factual",
+      "difficulty": "medium",
+      "metadata": {"source_section": "chunking"}
+    },
+    {
+      "id": "factual-019",
+      "query": "What is the default API port for the FastAPI server?",
+      "expected_answer": "8000",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "api_settings"}
+    },
+    {
+      "id": "factual-020",
+      "query": "What is the default min chunk size in tokens?",
+      "expected_answer": "100",
+      "expected_documents": ["config.py", "chunking.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "chunking_settings"}
+    },
+    {
+      "id": "factual-021",
+      "query": "What default embedding batch size is configured?",
+      "expected_answer": "64",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "medium",
+      "metadata": {"source_section": "embedding_settings"}
+    },
+    {
+      "id": "factual-022",
+      "query": "What BM25 top-k value is used by default for BM25-only search?",
+      "expected_answer": "20",
+      "expected_documents": ["config.py"],
+      "category": "factual",
+      "difficulty": "easy",
+      "metadata": {"source_section": "retrieval_settings"}
+    },
+    {
+      "id": "multi-hop-001",
+      "query": "What embedding model feeds into the OpenSearch kNN index, and what is its output dimension?",
+      "expected_answer": "BAAI/bge-large-en-v1.5 with 1024 dimensions",
+      "expected_documents": ["config.py", "vector.py", "generator.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["embedding_model", "dimension"]}
+    },
+    {
+      "id": "multi-hop-002",
+      "query": "How does the hybrid search combine vector and BM25 results, and what parameter controls the rank fusion?",
+      "expected_answer": "Uses Reciprocal Rank Fusion (RRF) with configurable k parameter (default 60)",
+      "expected_documents": ["hybrid.py", "search.py", "config.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["fusion_strategy", "rrf_k"]}
+    },
+    {
+      "id": "multi-hop-003",
+      "query": "After text is parsed and cleaned during ingestion, what chunking strategy splits it into pieces before embedding?",
+      "expected_answer": "Semantic chunking using heading detection, paragraph splitting, and sentence boundary analysis with target size 512 tokens",
+      "expected_documents": ["ingestion.py", "chunking.py", "parsers.py", "cleaning.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["ingestion_pipeline", "chunking_strategy"]}
+    },
+    {
+      "id": "multi-hop-004",
+      "query": "What reranking model is applied after hybrid fusion, and how many results does it return by default?",
+      "expected_answer": "cross-encoder/ms-marco-MiniLM-L-6-v2, returning top-10 results",
+      "expected_documents": ["config.py", "reranking.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["rerank_model", "rerank_top_k"]}
+    },
+    {
+      "id": "multi-hop-005",
+      "query": "How does the RAG generator build context from retrieved chunks before prompting the LLM?",
+      "expected_answer": "ContextBuilder assembles chunk contents with metadata, then PromptBuilder wraps them into system and user messages for the LLM backend",
+      "expected_documents": ["generator.py", "context.py", "prompt.py"],
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "metadata": {"requires_reasoning": ["context_building", "prompting"]}
+    },
+    {
+      "id": "multi-hop-006",
+      "query": "What is the full pipeline from raw document ingestion to answer generation? List each stage.",
+      "expected_answer": "1) Parse document 2) Clean text 3) Chunk into pieces 4) Generate embeddings 5) Index in OpenSearch 6) Retrieve relevant chunks 7) Rerank results 8) Build context 9) Generate answer with LLM",
+      "expected_documents": ["ingestion.py", "parsers.py", "cleaning.py", "chunking.py", "generator.py", "vector.py", "reranking.py", "context.py"],
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "metadata": {"requires_reasoning": ["full_pipeline"]}
+    },
+    {
+      "id": "multi-hop-007",
+      "query": "When vector search returns results, how are they normalized and merged with BM25 results in score-based fusion mode?",
+      "expected_answer": "Scores are min-max normalized per retriever, then weighted sums are computed. Documents appearing in both lists accumulate scores.",
+      "expected_documents": ["hybrid.py", "search.py"],
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "metadata": {"requires_reasoning": ["score_normalization", "fusion"]}
+    },
+    {
+      "id": "multi-hop-008",
+      "query": "What caching mechanisms are available, and at which pipeline stages can they be applied?",
+      "expected_answer": "Redis cache with configurable TTL (default 3600s) for query results, and embedding cache in .cache/embeddings for computed embeddings",
+      "expected_documents": ["redis_cache.py", "cache.py", "config.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["caching", "pipeline_stages"]}
+    },
+    {
+      "id": "multi-hop-009",
+      "query": "How does the system handle documents fetched from URLs via Firecrawl before they are indexed?",
+      "expected_answer": "URL is fetched via Firecrawl, content is cleaned (Unicode normalization, HTML entity decoding, whitespace normalization), then stored in S3 before chunking and embedding",
+      "expected_documents": ["ingestion.py", "fetchers.py", "cleaning.py", "storage.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["url_ingestion", "cleaning"]}
+    },
+    {
+      "id": "multi-hop-010",
+      "query": "What happens to a chunk's metadata as it flows from parsing through chunking to OpenSearch indexing?",
+      "expected_answer": "Parser adds format info, chunker adds heading_path, embeddings add embedding vectors, and OpenSearch stores content + metadata in the index",
+      "expected_documents": ["parsers.py", "chunking.py", "vector.py", "opensearch.py"],
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "metadata": {"requires_reasoning": ["metadata_flow"]}
+    },
+    {
+      "id": "multi-hop-011",
+      "query": "How does the citation manager extract and bundle source references from the generated answer?",
+      "expected_answer": "CitationManager processes the LLM output, matches citations to chunk IDs, and bundles them into a CitationBundle with document references",
+      "expected_documents": ["generator.py", "citations.py"],
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "metadata": {"requires_reasoning": ["citations"]}
+    },
+    {
+      "id": "summarization-001",
+      "query": "Summarize the complete ingestion pipeline from raw file to indexed document.",
+      "expected_answer": "The ingestion pipeline validates the file, parses it using format-specific parsers, cleans the text (fixing encoding, normalizing Unicode, removing HTML artifacts, collapsing whitespace), chunks the text semantically using heading and paragraph detection, generates embeddings, and indexes them in OpenSearch.",
+      "expected_documents": ["ingestion.py", "validation.py", "parsers.py", "cleaning.py", "chunking.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "ingestion"}
+    },
+    {
+      "id": "summarization-002",
+      "query": "Summarize how the hybrid search retrieval process works end-to-end.",
+      "expected_answer": "Hybrid search runs both vector search (using OpenSearch kNN or FAISS) and BM25 text search in parallel. Results are fused using Reciprocal Rank Fusion or score-based fusion with configurable weights. An optional reranker (cross-encoder) reorders the top results for improved relevance.",
+      "expected_documents": ["search.py", "hybrid.py", "vector.py", "bm25.py", "reranking.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "retrieval"}
+    },
+    {
+      "id": "summarization-003",
+      "query": "Summarize the text cleaning and normalization capabilities of the pipeline.",
+      "expected_answer": "The text cleaner handles encoding fixes, Unicode normalization, HTML entity decoding, control character removal, whitespace normalization, blank line collapsing, PDF artifact cleaning, and residual HTML stripping. Each step is configurable.",
+      "expected_documents": ["cleaning.py", "config.py"],
+      "category": "summarization",
+      "difficulty": "easy",
+      "metadata": {"scope": "cleaning"}
+    },
+    {
+      "id": "summarization-004",
+      "query": "Provide an overview of the configuration management system.",
+      "expected_answer": "Configuration uses Pydantic BaseSettings with YAML loading. Settings are composed of sub-settings (embedding, retrieval, generation, chunking, storage, etc.). Loading priority: environment variables override local config which overrides defaults. A singleton pattern ensures consistent settings across the application.",
+      "expected_documents": ["config.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "configuration"}
+    },
+    {
+      "id": "summarization-005",
+      "query": "Summarize the RAG generation process including context building and prompt construction.",
+      "expected_answer": "The RAG generator retrieves relevant chunks, builds context by assembling chunk contents with metadata, constructs system and user prompt messages, calls the LLM backend (synchronous, asynchronous, or streaming), and processes citations to link answer segments back to source documents.",
+      "expected_documents": ["generator.py", "context.py", "prompt.py", "citations.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "generation"}
+    },
+    {
+      "id": "summarization-006",
+      "query": "Summarize the different search modes available in the pipeline.",
+      "expected_answer": "Three modes: Vector-only search using dense embeddings and kNN similarity, BM25-only search using term frequency and inverse document frequency, and Hybrid search combining both via RRF or score fusion with optional reranking.",
+      "expected_documents": ["search.py", "vector.py", "bm25.py", "hybrid.py"],
+      "category": "summarization",
+      "difficulty": "easy",
+      "metadata": {"scope": "search_modes"}
+    },
+    {
+      "id": "summarization-007",
+      "query": "Summarize the observability and monitoring capabilities of the pipeline.",
+      "expected_answer": "The pipeline supports structured logging via structlog, OpenTelemetry tracing with OTLP export, and Prometheus metrics. Configuration includes log level, format, tracing endpoints, and metrics enablement.",
+      "expected_documents": ["config.py", "observability/__init__.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "observability"}
+    },
+    {
+      "id": "summarization-008",
+      "query": "Summarize the document storage architecture.",
+      "expected_answer": "Documents are stored in S3-compatible storage (SeaweedFS) for raw files, OpenSearch for vector indices and BM25 search, PostgreSQL for metadata and document tracking, and Redis for query result caching with configurable TTL.",
+      "expected_documents": ["storage.py", "opensearch.py", "postgres.py", "redis_cache.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "storage"}
+    },
+    {
+      "id": "summarization-009",
+      "query": "Summarize the API layer and its endpoints.",
+      "expected_answer": "The FastAPI application provides REST endpoints for document ingestion, search (vector/BM25/hybrid), document management, and RAG generation. It includes CORS configuration, rate limiting, and optional authentication.",
+      "expected_documents": ["api/app.py", "api/routes/"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "api"}
+    },
+    {
+      "id": "summarization-010",
+      "query": "Summarize how the embedding system works in the pipeline.",
+      "expected_answer": "Embeddings are generated using sentence-transformers (default: BAAI/bge-large-en-v1.5) with configurable batch size, normalization, and device. An embedding cache in .cache/embeddings avoids recomputation. Vectors are 1024-dimensional and L2-normalized for cosine similarity search.",
+      "expected_documents": ["embeddings/generator.py", "embeddings/cache.py", "config.py"],
+      "category": "summarization",
+      "difficulty": "medium",
+      "metadata": {"scope": "embeddings"}
+    },
+    {
+      "id": "comparison-001",
+      "query": "Compare vector search and BM25 search in terms of strengths and weaknesses.",
+      "expected_answer": "Vector search excels at semantic similarity and understanding intent, but may miss exact keyword matches. BM25 excels at exact term matching and is faster to compute, but misses semantic relationships. Hybrid search combines both for best coverage.",
+      "expected_documents": ["vector.py", "bm25.py", "hybrid.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["vector_search", "bm25"]}
+    },
+    {
+      "id": "comparison-002",
+      "query": "Compare RRF fusion and score-based fusion for combining retrieval results.",
+      "expected_answer": "RRF uses rank-based scoring (1/(k+rank)) which is robust to score scale differences between retrievers. Score-based fusion uses min-max normalized scores which preserves relative magnitudes but is sensitive to score distributions. RRF is generally more stable across different retriever combinations.",
+      "expected_documents": ["hybrid.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["rrf", "score_fusion"]}
+    },
+    {
+      "id": "comparison-003",
+      "query": "Compare the OpenSearch vector backend and the FAISS in-memory backend.",
+      "expected_answer": "OpenSearch is a distributed search engine suitable for production with persistence and scalability. FAISS is an in-memory library suitable for development and testing with fast iteration but no persistence. OpenSearch requires a running service; FAISS works standalone.",
+      "expected_documents": ["vector.py", "opensearch.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["opensearch", "faiss"]}
+    },
+    {
+      "id": "comparison-004",
+      "query": "Compare synchronous, asynchronous, and streaming generation modes.",
+      "expected_answer": "Synchronous generate() blocks until the full response is ready. Asynchronous agenerate() returns a coroutine for non-blocking use. Streaming stream_generate() yields tokens as they arrive, providing lower perceived latency for end users.",
+      "expected_documents": ["generator.py"],
+      "category": "comparison",
+      "difficulty": "easy",
+      "metadata": {"compares": ["sync", "async", "streaming"]}
+    },
+    {
+      "id": "comparison-005",
+      "query": "Compare file ingestion and URL ingestion workflows.",
+      "expected_answer": "File ingestion validates, parses locally, cleans, and optionally stores in S3. URL ingestion fetches via Firecrawl, cleans the fetched markdown content, and stores in S3. Both paths converge at the chunking and embedding stages.",
+      "expected_documents": ["ingestion.py", "fetchers.py"],
+      "category": "comparison",
+      "difficulty": "easy",
+      "metadata": {"compares": ["file_ingestion", "url_ingestion"]}
+    },
+    {
+      "id": "comparison-006",
+      "query": "Compare the chunking strategy options and their trade-offs.",
+      "expected_answer": "Semantic chunking respects document structure for coherent chunks, sentence splitting handles oversized text, and merging preserves target size. Overlap ensures context continuity between adjacent chunks.",
+      "expected_documents": ["chunking.py", "config.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["semantic", "sentence", "fixed"]}
+    },
+    {
+      "id": "comparison-007",
+      "query": "Compare Redis caching and PostgreSQL for storing pipeline state.",
+      "expected_answer": "Redis provides fast key-value caching with configurable TTL for query results and embeddings. PostgreSQL provides persistent storage for document metadata, ingestion tracking, and relational queries. They serve complementary roles: Redis for performance, PostgreSQL for durability.",
+      "expected_documents": ["redis_cache.py", "postgres.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["redis", "postgres"]}
+    },
+    {
+      "id": "comparison-008",
+      "query": "Compare the reranking approach with the initial retrieval ranking.",
+      "expected_answer": "Initial retrieval uses fast approximate methods (ANN for vectors, term frequency for BM25). Reranking uses a cross-encoder model that jointly processes query-document pairs for higher relevance accuracy but is slower. Reranking is applied to a reduced top-k for efficiency.",
+      "expected_documents": ["reranking.py", "vector.py", "bm25.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["initial_ranking", "reranking"]}
+    },
+    {
+      "id": "comparison-009",
+      "query": "Compare the parsing capabilities for different document formats.",
+      "expected_answer": "PDF parsing uses pdfplumber for text and table extraction. DOCX uses python-docx. Markdown and HTML use BeautifulSoup. CSV uses pandas. Each parser handles format-specific extraction, but all produce a unified ParsedDocument structure for downstream processing.",
+      "expected_documents": ["parsers.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["pdf", "docx", "md", "html", "csv"]}
+    },
+    {
+      "id": "comparison-010",
+      "query": "Compare the environment-based configuration with YAML-based configuration.",
+      "expected_answer": "Environment variables provide 12-factor-app style config suitable for containers and CI/CD. YAML files provide hierarchical, version-controlled configuration with deep merge support. Environment variables override YAML values, giving flexibility for secrets and deployment-specific overrides.",
+      "expected_documents": ["config.py"],
+      "category": "comparison",
+      "difficulty": "medium",
+      "metadata": {"compares": ["env_config", "yaml_config"]}
+    },
+    {
+      "id": "comparison-011",
+      "query": "Compare how metadata is filtered in vector search versus BM25 search.",
+      "expected_answer": "Vector search applies metadata filters as post-filter on results before returning, which may reduce result count. BM25 search supports metadata filtering in the search call itself. Both approaches can produce empty results if filters are too restrictive.",
+      "expected_documents": ["vector.py", "bm25.py"],
+      "category": "comparison",
+      "difficulty": "hard",
+      "metadata": {"compares": ["vector_filter", "bm25_filter"]}
+    },
+    {
+      "id": "edge-001",
+      "query": "",
+      "expected_answer": "An empty query should be rejected with a validation error or return no results.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "medium",
+      "metadata": {"edge_type": "empty_input"}
+    },
+    {
+      "id": "edge-002",
+      "query": "What is the maximum length query that can be processed? What is the maximum length query that can be processed? What is the maximum length query that can be processed? What is the maximum length query that can be processed? What is the maximum length query that can be processed?",
+      "expected_answer": "Very long queries should be truncated or tokenized to fit within model context limits.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "hard",
+      "metadata": {"edge_type": "long_input", "char_count": 2050}
+    },
+    {
+      "id": "edge-003",
+      "query": "SELECT * FROM documents WHERE 1=1; DROP TABLE embeddings; --",
+      "expected_answer": "SQL injection attempts in queries should be treated as plain text, not executed.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "hard",
+      "metadata": {"edge_type": "injection_attempt"}
+    },
+    {
+      "id": "edge-004",
+      "query": "🔍📋✅🎯🚀💻🔬📊",
+      "expected_answer": "Queries containing only emoji should either return no results or be handled gracefully without errors.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "medium",
+      "metadata": {"edge_type": "special_characters"}
+    },
+    {
+      "id": "edge-005",
+      "query": "What is the schema for document_99999 that does not exist in the index?",
+      "expected_answer": "Queries about non-existent documents should return empty results without errors.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "easy",
+      "metadata": {"edge_type": "nonexistent_reference"}
+    },
+    {
+      "id": "edge-006",
+      "query": "äöü ÄÖÜ ß ñ é è ê à â ô î û ç ß ñ",
+      "expected_answer": "Queries with Unicode characters (umlauts, accents, special letters) should be handled correctly.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "medium",
+      "metadata": {"edge_type": "unicode_characters"}
+    },
+    {
+      "id": "edge-007",
+      "query": "a",
+      "expected_answer": "Single character queries should be handled gracefully, returning results or a meaningful empty response.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "easy",
+      "metadata": {"edge_type": "minimal_input"}
+    },
+    {
+      "id": "edge-008",
+      "query": "What is the meaning of life, the universe, and everything? Also, how does the pipeline handle concurrent writes to the vector index?",
+      "expected_answer": "Compound queries with unrelated topics should be handled by retrieving relevant documents for each part or gracefully indicating scope limitations.",
+      "expected_documents": [],
+      "category": "edge_case",
+      "difficulty": "hard",
+      "metadata": {"edge_type": "compound_unrelated"}
+    }
+  ]
+}

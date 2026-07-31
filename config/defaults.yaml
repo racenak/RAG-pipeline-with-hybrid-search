@@ -1,0 +1,119 @@
+# =============================================================================
+# RAG Pipeline — System-wide defaults
+# =============================================================================
+
+app_name: "rag-pipeline"
+app_version: "0.1.0"
+debug: false
+environment: "development"
+
+# ---- Embedding --------------------------------------------------------------
+embedding:
+  backend: "sentence-transformers"
+  model: "BAAI/bge-large-en-v1.5"
+  dimension: 1024
+  batch_size: 64
+  normalize: true
+  device: "cpu"
+  cache_enabled: true
+  cache_dir: ".cache/embeddings"
+
+# ---- Retrieval (flat keys) --------------------------------------------------
+retrieval:
+  vector_top_k: 20
+  vector_similarity_threshold: 0.7
+  bm25_top_k: 20
+  bm25_k1: 1.5
+  bm25_b: 0.75
+  rrf_k: 60
+  rerank_enabled: true
+  rerank_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  rerank_top_k: 10
+
+# ---- Generation (OpenRouter) ------------------------------------------------
+generation:
+  provider: "openrouter"
+  model: "inclusionai/ling-3.0-flash:free"
+  base_url: "https://openrouter.ai/api/v1"
+  temperature: 0.7
+  max_tokens: 1024
+  streaming: true
+  system_prompt: ""
+
+# ---- Chunking ---------------------------------------------------------------
+chunking:
+  strategy: "semantic"
+  target_size: 512
+  max_size: 1024
+  min_size: 100
+  overlap: 50
+
+# ---- Storage (nested — flattened by Settings) --------------------------------
+storage:
+  opensearch_host: "localhost"
+  opensearch_port: 9200
+  opensearch_scheme: "http"
+  opensearch_index_prefix: "rag"
+  opensearch_timeout: 30
+  opensearch_username: ""
+  opensearch_password: ""
+  opensearch_max_retries: 3
+  opensearch_retry_on_timeout: true
+  postgres_host: "localhost"
+  postgres_port: 5432
+  postgres_database: "rag_pipeline"
+  postgres_user: "rag"
+  postgres_password: "rag_dev_password"
+  postgres_pool_size: 5
+  postgres_max_overflow: 10
+  redis_host: "localhost"
+  redis_port: 6379
+  redis_db: 0
+  redis_ttl_seconds: 3600
+
+# ---- S3-compatible storage (SeaweedFS or AWS S3) ------------------------------
+s3:
+  endpoint_url: "http://localhost:8333"
+  access_key: "anything"
+  secret_key: "anything"
+  bucket: "rag-documents"
+
+# ---- Text Cleaning -----------------------------------------------------------
+cleaning:
+  fix_encoding: true
+  normalize_unicode: true
+  decode_html_entities: true
+  remove_control_chars: true
+  normalize_whitespace: true
+  collapse_blank_lines: true
+  max_blank_lines: 1
+  clean_pdf_artifacts: true
+  strip_residual_html: true
+
+# ---- Firecrawl (URL ingestion) ------------------------------------------------
+firecrawl:
+  timeout: 30
+  crawl_limit: 100
+
+# ---- Observability ----------------------------------------------------------
+observability:
+  log_level: "INFO"
+  log_format: "json"
+  tracing_enabled: true
+  tracing_exporter: "otlp"
+  tracing_endpoint: "http://localhost:4317"
+  metrics_enabled: true
+
+# ---- API --------------------------------------------------------------------
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]
+  rate_limit_per_minute: 60
+  auth_enabled: false
+
+# ---- Incremental ingestion ---------------------------------------------------
+incremental:
+  enabled: true
+  hash_algorithm: "sha256"
+  reindex_batch_size: 100
